@@ -95,7 +95,7 @@ export const generateRecurringEvents = (event, startDate, endDate) => {
           // Find the next day that matches one of the selected days of the week
           let found = false;
           let tempDate = addDays(currentDate, 1);
-          const daysChecked = 0;
+          let daysChecked = 0;
           
           while (!found && daysChecked < 7) {
             const dayOfWeek = format(tempDate, 'EEEE').toLowerCase();
@@ -105,6 +105,7 @@ export const generateRecurringEvents = (event, startDate, endDate) => {
             } else {
               tempDate = addDays(tempDate, 1);
             }
+            daysChecked++;
           }
           
           if (!found) {

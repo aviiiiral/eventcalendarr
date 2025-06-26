@@ -2,6 +2,7 @@ import React from 'react';
 import { format } from 'date-fns';
 import { useDrop } from 'react-dnd';
 import { isCurrentMonth, isToday } from '../../utils/dateUtils';
+import EventItem from './EventItem';
 
 const CalendarCell = ({ 
   day, 
@@ -43,16 +44,14 @@ const CalendarCell = ({
       </div>
       <div className="cell-content">
         {events.map((event) => (
-          <div 
+          <EventItem 
             key={event.id || event.instanceId}
-            className={`event-item ${event.color || ''}`}
+            event={event}
             onClick={(e) => {
               e.stopPropagation();
               onEventClick(event);
             }}
-          >
-            {event.title}
-          </div>
+          />
         ))}
       </div>
     </div>
