@@ -8,7 +8,6 @@ Clone the project from GitHub using
 
 ### npm i or npm install
 
-## Available Scripts
 
 In the project directory, you can run:
 
